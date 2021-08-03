@@ -1,6 +1,5 @@
 package com.dynamic.springboot.controller;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.dynamic.springboot.entity.GoodsPO;
 import com.dynamic.springboot.mapper.GoodsMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -23,13 +22,11 @@ public class GoodsController {
     private GoodsMapper goodsMapper;
 
     @GetMapping("master")
-    @DS("master")
     public List<GoodsPO> goods3307() {
         return goodsMapper.selectList(null);
     }
 
     @GetMapping("slave_1")
-    @DS("slave_1")
     public List<GoodsPO> goods3308() {
         return goodsMapper.selectList(null);
     }

@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static com.dynamic.springboot.constants.DataSourcePoolNameConstant.MASTER;
+import static com.dynamic.springboot.constants.DataSourcePoolNameConstant.SLAVE_1;
+
 /**
  * @author wangyichun
  * @since 2021/8/3 10:51
@@ -22,14 +25,14 @@ public class UsersController {
     @Autowired
     private UsersMapper usersMapper;
 
-    @GetMapping("master")
-    @DS("master")
+    @GetMapping(MASTER)
+    @DS("slave_1")
     public List<UsersPO> users3307() {
         return usersMapper.selectList(null);
     }
 
-    @GetMapping("slave_1")
-    @DS("slave_1")
+    @GetMapping(SLAVE_1)
+    @DS("master")
     public List<UsersPO> users3308() {
         return usersMapper.selectList(null);
     }

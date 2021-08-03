@@ -1,10 +1,20 @@
 GET localhost:8080/users/master
+poolname: master
 
 ###
 GET localhost:8080/users/slave_1
+poolname: slave_1
+
+###
+GET localhost:8080/users/master
 
 ###
 GET localhost:8080/goods/master
+poolname: master
+
+###
+GET localhost:8080/goods/slave_1
+poolname: slave_1
 
 ###
 GET localhost:8080/goods/slave_1
